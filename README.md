@@ -1,6 +1,10 @@
 # SantagiftClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+Le côté client va permettre de créer deux profils d'utilisateurs différents : les enfants et les Père-Noël.
+Les premiers pourront créer leur liste de souhait (les modifier, les supprimer).
+Et les seconds pourront réserver les souhaits des enfants.
+Seuls les PN pourront voir qui a réservé, les enfants quant à eux ne pourront pas voir le nom de leur PN.
 
 ## Development server
 
