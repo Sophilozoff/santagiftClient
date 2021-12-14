@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { GiftCardComponent } from './components/gift-card/gift-card.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {GiftsComponent} from "./components/gifts/gifts.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    GiftCardComponent
+    GiftCardComponent,
+    GiftsComponent
   ],
   imports: [
     BrowserModule,
