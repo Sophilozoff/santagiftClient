@@ -11,8 +11,8 @@ export class GiftService {
 
   constructor(private http : HttpClient) { }
 
-  findAll(){
-    return this.http.get(`${environment.apiUrl}/gifts`);
+  findAll(): Observable<Gift[]> {
+    return this.http.get<Gift[]>(`${environment.apiUrl}/gifts`);
   }
 
   findById(id: number): Observable<Gift>{

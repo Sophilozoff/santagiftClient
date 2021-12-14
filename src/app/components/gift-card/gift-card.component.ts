@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {GiftService} from "../../services/gift.service";
 
 @Component({
   selector: 'app-gift-card',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GiftCardComponent implements OnInit {
 
-  constructor() { }
+  gift: any;
+  id: number;
+
+  constructor(private route: ActivatedRoute, private giftService: GiftService) {
+    this.id = this.route.snapshot.params['id'];
+  }
 
   ngOnInit(): void {
+    this.getGift();
+  }
+
+  getGift(): void{
+    this.giftService.findById(this.id).subscribe(data =>
+      this.gift = data);
+  }
+
+  goUrl(): void {
+    
   }
 
 }

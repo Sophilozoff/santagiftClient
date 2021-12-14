@@ -1,1 +1,4 @@
-<p>gift-card works!</p>
+<div *ngIf="gift" style="text-align:center">
+  <p>{{ gift.name }} souhaité par {{gift.child.name}}</p>
+  <a [href]="gift.url">Voir la fiche produit</a>
+</div>
