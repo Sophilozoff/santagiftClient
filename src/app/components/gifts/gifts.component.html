@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="card">
     <ng-container *ngFor="let gift of gifts">
-      <div style="text-align:center">
-        <p>{{ gift.name }} souhaité par {{gift.child.name}}</p>
-        <a href="{{gift.url}}">Voir la fiche produit</a>
+      <div *ngIf="gift" class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p>{{ gift.name }} </p>
+          <h6 class="card-subtitle mb-2 text-muted">Souhaité par {{gift.child.username}}</h6>
+          <a [href]="gift.url">Voir la fiche produit</a>
+        </div>
       </div>
     </ng-container>
-  </div>
 </div>

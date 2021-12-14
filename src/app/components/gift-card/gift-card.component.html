@@ -1,4 +1,10 @@
-<div *ngIf="gift" style="text-align:center">
-  <p>{{ gift.name }} souhaité par {{gift.child.name}}</p>
-  <a [href]="gift.url">Voir la fiche produit</a>
+
+
+<div *ngIf="gift" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p>{{ gift.name }} souhaité par {{gift.child.name}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a [href]="gift.url">Voir la fiche produit</a>
+  </div>
 </div>
