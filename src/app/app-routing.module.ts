@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {GiftsComponent} from "./gifts/gifts.component";
+import {GiftsComponent} from "./components/gifts/gifts.component";
 
 const routes: Routes = [
   {path: 'allgifts', component: GiftsComponent}
