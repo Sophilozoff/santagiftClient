@@ -13,6 +13,9 @@
         <li class="nav-item" *ngIf="!isLoggedIn">
           <a class="nav-link" routerLink="/">Créer un compte</a>
         </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" routerLink="/login">Se connecter</a>
+        </li>
         <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link" routerLink="/">Mon profil</a>
         </li>
@@ -28,9 +31,9 @@
         <li class="nav-item" *ngIf="showAdminBoard">
           <a class="nav-link" routerLink="/">Administrateur</a>
         </li>
-        <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link" (click)="logout()">Se déconnecter</a>
-        </li>
+<!--        <li class="nav-item" *ngIf="isLoggedIn">-->
+<!--          <a class="nav-link" (click)="logout()">Se déconnecter</a>-->
+<!--        </li>-->
       </ul>
     </div>
   </div>
