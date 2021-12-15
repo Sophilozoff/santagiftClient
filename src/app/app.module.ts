@@ -7,12 +7,17 @@ import { GiftCardComponent } from './components/gift-card/gift-card.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GiftsComponent} from "./components/gifts/gifts.component";
+import {authInterceptorProviders} from './_helpers/auth.interceptor';
+import { NavbarComponent } from './components/commons/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GiftCardComponent,
-    GiftsComponent
+    GiftsComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,7 @@ import {GiftsComponent} from "./components/gifts/gifts.component";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
