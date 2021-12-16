@@ -10,6 +10,7 @@ import {GiftsComponent} from "./components/gifts/gifts.component";
 import {authInterceptorProviders} from './_helpers/auth.interceptor';
 import { NavbarComponent } from './components/commons/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './components/login/login.component';
     GiftCardComponent,
     GiftsComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

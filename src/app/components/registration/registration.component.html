@@ -1,0 +1,99 @@
+<div class="col-6">
+  <div class="card card-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Pseudo*</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="username"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="alert-danger" *ngIf="f['username'].errors && f['submitted']">
+          <div *ngIf="f['username'].errors['required']">Pseudo obligatoire</div>
+          <div *ngIf="f['username'].errors['minlength']">
+            Votre pseudo doit contenir au moins  3 caractères.
+          </div>
+          <div *ngIf="f['username'].errors['maxlength']">
+            Votre pseudo ne peut pas contenir plus de 20 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Adresse mail*</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          required
+          email
+        />
+        <div class="alert-danger" *ngIf="f['email'].errors && f['submitted']">
+          <div *ngIf="f['email'].errors['required']">L'email est obligatoire.</div>
+          <div *ngIf="f['email'].errors['email']">
+            L'addresse email doit être dans un format valide.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mot de passe*</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          required
+          minlength="6"
+        />
+        <div class="alert-danger" *ngIf="f['password'].errors && f['submitted']">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+          <div *ngIf="f['password'].errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Avatar (lien URL)</label>
+        <input
+          type="avatar"
+          class="form-control"
+          formControlName="avatar"
+          avatar
+        />
+      </div>
+      <div class="form-group">
+        <label>Adresse postale*</label>
+        <input
+          type="address"
+          class="form-control"
+          formControlName="address"
+          required
+          address
+        />
+        <div class="alert-danger" *ngIf="f['address'].errors && f['submitted']">
+          <div *ngIf="f['address'].errors['required']">L'adresse postale est obligatoire.</div>
+        </div>
+      </div>
+      <ng-container formArrayName="roles">
+        <ng-container [formGroupName]="0">
+          <select  value="role.libelle" formControlName="libelle" [(ngModel)]="roleList">
+            <option *ngFor="let role of roleList" [ngValue]="role.libelle" >
+              {{ role.libelle }}
+            </option>
+          </select>
+        </ng-container>
+      </ng-container>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+      <div class="alert alert-warning" *ngIf="f['submitted'] && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>
