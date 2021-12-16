@@ -1,18 +1,5 @@
 <div class="container">
-    <ng-container *ngFor="let gift of gifts">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <p> </p>
-        </div>
-      </div>
-      <div *ngIf="gift"  class="card" style="width: 18rem;">
-        <img [src]="gift.child.avatar" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{ gift.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Souhaité par {{gift.child.username}}</h6>
-
-          <a [href]="gift.url" class="btn btn-primary">Voir le fiche produit</a>
-        </div>
-      </div>
-    </ng-container>
+    <div class="col-md-6 article" *ngFor="let gift of gifts">
+      <app-gift-card [gift]="gift"></app-gift-card>
+    </div>
 </div>

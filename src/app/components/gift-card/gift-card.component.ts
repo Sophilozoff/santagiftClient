@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {GiftService} from "../../services/gift.service";
+import {Gift} from "../../models/gift";
 
 @Component({
   selector: 'app-gift-card',
@@ -9,7 +10,7 @@ import {GiftService} from "../../services/gift.service";
 })
 export class GiftCardComponent implements OnInit {
 
-  gift: any;
+  @Input() gift!: Gift;
   id: number;
 
   constructor(private route: ActivatedRoute, private giftService: GiftService) {
@@ -26,7 +27,7 @@ export class GiftCardComponent implements OnInit {
   }
 
   goUrl(): void {
-    
+
   }
 
 }

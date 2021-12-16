@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {TokenStorageService} from "../../services/token-storage.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,10 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
+  }
+
+  getCurrentUser():Observable<number>{
+    return this.tokenStorage.getUser().id;
   }
 
   onSubmit(): void {

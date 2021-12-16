@@ -25,6 +25,9 @@
         <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link" routerLink="/">Liste des enfants</a>
         </li>
+        <li class="nav-item" *ngIf="showChildBoard">
+          <a class="nav-link" routerLink="/gift-form">Créer un souhait</a>
+        </li>
         <li class="nav-item" *ngIf="showModeratorBoard">
           <a class="nav-link" routerLink="/">Modérateur</a>
         </li>

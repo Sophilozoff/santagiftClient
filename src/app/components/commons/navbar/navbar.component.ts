@@ -9,6 +9,8 @@ import {TokenStorageService} from "../../../services/token-storage.service";
 export class NavbarComponent implements OnInit {
   private roles!: string[]
   isLoggedIn = false;
+  showChildBoard = false;
+  showSantaBoard = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username!: string;
@@ -22,6 +24,8 @@ export class NavbarComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
+      this.showChildBoard = this.roles.includes('ROLE_CHILD');
+      this.showSantaBoard = this.roles.includes('ROLE_SANTA');
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
       this.username = user.username;

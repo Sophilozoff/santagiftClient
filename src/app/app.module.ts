@@ -11,6 +11,7 @@ import {authInterceptorProviders} from './_helpers/auth.interceptor';
 import { NavbarComponent } from './components/commons/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { GiftFormComponent } from './components/gift-form/gift-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistrationComponent } from './components/registration/registration.co
     GiftsComponent,
     NavbarComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    GiftFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+<div class="col-6">
+  <div class="card card-container">
+    <form [formGroup]="giftForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Nom du cadeau souhaité*</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="alert-danger" *ngIf="f['name'].errors && f['submitted']">
+          <div *ngIf="f['name'].errors['required']">Nom obligatoire</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Lien du site marchand*</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="url"
+          required
+        />
+        <div class="alert-danger" *ngIf="f['url'].errors && f['submitted']">
+          <div *ngIf="f['url'].errors['required']">L'url est obligatoire.</div>
+        </div>
+      </div>
+      <div class="form-group visually-hidden" formGroupName="child">
+        <input
+          type="number"
+          formControlName="id"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
