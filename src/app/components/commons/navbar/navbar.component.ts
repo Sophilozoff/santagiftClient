@@ -21,14 +21,14 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if(this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
+      const currentUser = this.tokenStorageService.getUser();
+      this.roles = currentUser.roles;
 
       this.showChildBoard = this.roles.includes('ROLE_CHILD');
       this.showSantaBoard = this.roles.includes('ROLE_SANTA');
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-      this.username = user.username;
+      this.username = currentUser.username;
     }
   }
 
