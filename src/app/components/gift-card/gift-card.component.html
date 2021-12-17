@@ -3,7 +3,7 @@
 <div *ngIf="gift" class="card" style="width: 18rem;">
   <div class="card-body">
     <p>{{ gift.name }} </p>
-    <h6 class="card-subtitle mb-2 text-muted">souhaité par {{ gift.child.username }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">souhaité par {{ gift.child.username }} <img [src]="gift.child.avatar" alt=""></h6>
     <a [href]="gift.url">Voir la fiche produit</a>
   </div>
 </div>

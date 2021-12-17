@@ -28,8 +28,4 @@ export class GiftService {
     return this.http.post<Gift>(GIFT_API + `save`, gift, this.httpOptions);
   }
 
-
-
-
-
 }

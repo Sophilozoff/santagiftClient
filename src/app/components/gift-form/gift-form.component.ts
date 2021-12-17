@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {GiftService} from "../../services/gift.service";
 import {User} from "../../models/user";
 import {TokenStorageService} from "../../services/token-storage.service";
+import {Gift} from "../../models/gift";
 
 @Component({
   selector: 'app-gift-form',
@@ -51,4 +52,5 @@ export class GiftFormComponent implements OnInit {
         }
       )
   }
+
 }
