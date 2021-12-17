@@ -36,9 +36,11 @@ export class GiftCardComponent implements OnInit {
       this.gift = data);
   }
 
-  bookAGift(): void {
+  bookAGift(gift: Gift): void {
     this.gift.isBooked = true;
     this.isHidden = true;
+    this.gift.santa = this.tokenStorage.getUser();
+    this.giftService.bookAGift(gift);
   }
 
   cancelTheBooking(): void {

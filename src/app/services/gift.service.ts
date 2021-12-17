@@ -28,6 +28,10 @@ export class GiftService {
     return this.http.post<Gift>(GIFT_API + `save`, gift, this.httpOptions);
   }
 
+  bookAGift(gift: Gift){
+    return this.http.put<Gift>(GIFT_API + `update`, gift, this.httpOptions);
+  }
+
 
 
 

@@ -3,10 +3,11 @@
 <div *ngIf="gift" class="card p-2" style="width: 18rem;">
   <div class="card-body">
     <p>{{ gift.name }} </p>
-    <h6 class="card-subtitle mb-2 text-muted">souhaité par {{ gift.child.username }}</h6>
+
+    <h6 class="card-subtitle mb-2 text-muted">souhaité par {{ gift.child.username }} <img [src]="gift.child.avatar" alt=""></h6>
     <div class="row justify-content-between mb-1 mt-5">
       <a class="btn btn-primary col-5" [href]="gift.url">Voir la fiche produit</a>
-      <button (click)="bookAGift()" class="align-middle btn btn-primary col-5" *ngIf="isShowToSanta" [hidden]="isHidden">Réserver</button>
+      <button (click)="bookAGift(gift)" class="align-middle btn btn-primary col-5" *ngIf="isShowToSanta" [hidden]="isHidden">Réserver</button>
       <button (click)="cancelTheBooking()" class="align-middle btn btn-danger col-5" *ngIf="isShowToSanta" [hidden]="!isHidden">Annuler la réservation</button>
     </div>
   </div>
